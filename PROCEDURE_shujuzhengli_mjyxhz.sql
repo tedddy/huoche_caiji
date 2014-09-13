@@ -9,6 +9,22 @@ DELIMITER $$
 
 CREATE DEFINER=`root`@`%` PROCEDURE `shujuzhengli_mjyxhz`()
 BEGIN
+
+/*把daoru_jd表中的数据插入到jd_mjyxhz*/
+INSERT INTO `jd_mjyxhz` ( `jd_id` , `jd_mjyxhz` ) 
+	(SELECT 
+			`daoru_jd`.`jd_id` , 
+			`daoru_jd`.`jd_mjyxhz`
+	FROM
+			`daoru_jd`
+	WHERE
+			`daoru_jd`.`jd_mjyxhz` IS NOT NULL AND 
+			`daoru_jd`.`jd_mjyxhz` <> '' 
+	)
+	ON DUPLICATE KEY UPDATE 
+			`jd_mjyxhz`= `daoru_jd`.`jd_mjyxhz`;
+
+/*把汇总内容分开*/			
         UPDATE `jd_mjyxhz` 
 SET 
 	`jd_mjyxhz_01` = SUBSTRING_INDEX( `jd_mjyxhz` , '|', 1 );
