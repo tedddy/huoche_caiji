@@ -4,6 +4,7 @@
 -- --------------------------------------------------------------------------------
 DELIMITER $$
 
+/*把jd_mjyxhz表中的数据插入到jd_mjyx*/
 CREATE DEFINER=`root`@`%` PROCEDURE `shujuzhengli_mjyx`()
 BEGIN
         INSERT INTO `jd_mjyx` (`jd_id`, `jd_mjyx_id`, `jd_mjyx_biaoqian`, `jd_mjyx_shuliang`) 
