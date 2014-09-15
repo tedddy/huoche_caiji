@@ -12,6 +12,6 @@ BEGIN
 END
 */
 
-/* 加入内容是否导入成功的判断。f是flag的缩写 cgbz是成功标志的缩写。 */
-ALTER TABLE `daoru_jd` ADD `f_cgbz` BOOL DEFAULT NULL COMMENT '成功标志' AFTER `jd_id`;
+/* 加入内容是否导入成功程度的字段。f是flag的缩写 cgbz是成功标志的缩写。 */
+ALTER TABLE `daoru_jd` ADD `f_cgbz` TINYINT(1) DEFAULT NULL COMMENT '成功标志' AFTER `jd_id`;
 
