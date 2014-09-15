@@ -1,6 +1,7 @@
 @ECHO OFF
-REM ÊåáÂÆöÂ§©Êï∞
-@echo off
+
+REM ‘⁄Win7£®∑«’˝◊⁄÷–Œƒ∞Ê£©…œ–¥batŒƒº˛µƒ ±∫Ú£¨»Áπ˚”–÷–Œƒ£¨≤¢«““™»√githubø…∂¡µƒª∞£¨“™”√windows◊‘¥¯µƒNotepad£¨≤¢±£¥ÊŒ™ANSI±‡¬Î°£ ◊¢“‚£∫‘⁄githubµƒGUI£®windows for git£©…œ÷–Œƒœ‘ æ”–µ„Œ Ã‚°£
+
 for /f "delims=" %%a in ('wmic OS Get localdatetime  ^| find "."') do set "dt=%%a"
 set "YYYY=%dt:~0,4%"
 set "YY=%dt:~2,2%"
@@ -17,24 +18,24 @@ echo datestamp: "%datestamp%"
 echo timestamp: "%timestamp%"
 echo fullstamp: "%fullstamp%"
 
-REM !!! today = %YY%%MM%%DD% todayÂíå=‰πãÈó¥Â¶ÇÊûúÊúâÁ©∫Ê†ºÁöÑËØùÔºåÊòØ‰∏çË°åÁöÑ„ÄÇ
+REM !!! today = %YY%%MM%%DD% today∫Õ=÷Æº‰»Áπ˚”–ø’∏Òµƒª∞£¨ «≤ª––µƒ°£
 
 SET today=%YY%%MM%%DD%
 
-PAUSE
+REM PAUSE
 
 ECHO.
 
-REM move "D:\Âø´Áõò\ShuJuCaiJi\WangZhiHuiZong\bucai_*.txt" "D:\Âø´Áõò\ShuJuCaiJi\WangZhiHuiZong\_Â≠òÊ°£"
-REM del "D:\Âø´Áõò\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
+move "D:\øÏ≈Ã\ShuJuCaiJi\WangZhiHuiZong\bucai_*.txt" "D:\øÏ≈Ã\ShuJuCaiJi\WangZhiHuiZong\_¥Êµµ"
+del "D:\øÏ≈Ã\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
 
-PAUSE
+REM PAUSE
 
-"C:\Program Files (x86)\MySQL\MySQL Workbench 6.1 CE\mysql" -u root -p8 -h 192.168.137.172 locoy -e "SELECT jd_wangzhi FROM `daoru_jd` WHERE `jd_jiancheng` IS NULL;" > "D:\Âø´Áõò\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt"
+"C:\Program Files (x86)\MySQL\MySQL Workbench 6.1 CE\mysql" -u root -p8 -h 192.168.137.172 locoy -e "SELECT jd_wangzhi FROM `daoru_jd` WHERE `jd_jiancheng` IS NULL;" > "D:\øÏ≈Ã\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt"
 
-PAUSE
+REM PAUSE
 
-REM MORE /E +1 "D:\Âø´Áõò\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt" > "D:\Âø´Áõò\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
+MORE /E +1 "D:\øÏ≈Ã\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt" > "D:\øÏ≈Ã\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
 
 REM PAUSE
 
