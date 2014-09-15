@@ -21,20 +21,20 @@ REM !!! today = %YY%%MM%%DD% today和=之间如果有空格的话，是不行的
 
 SET today=%YY%%MM%%DD%
 
-REM PAUSE
+PAUSE
 
 ECHO.
 
-move "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_*.txt" "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\_存档"
-del "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
+REM move "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_*.txt" "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\_存档"
+REM del "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
 
-REM PAUSE
+PAUSE
 
 "C:\Program Files (x86)\MySQL\MySQL Workbench 6.1 CE\mysql" -u root -p8 -h 192.168.137.172 locoy -e "SELECT jd_wangzhi FROM `daoru_jd` WHERE `jd_jiancheng` IS NULL;" > "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt"
 
-REM PAUSE
+PAUSE
 
-MORE /E +1 "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt" > "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
+REM MORE /E +1 "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt" > "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
 
 REM PAUSE
 
