@@ -10,7 +10,8 @@ set "HH=%dt:~8,2%"
 set "Min=%dt:~10,2%"
 set "Sec=%dt:~12,2%"
 
-set datestamp=%YYYY%%MM%%DD%
+set datestamp_long=%YYYY%%MM%%DD%
+set datestamp_short=%YY%%MM%%DD%
 set timestamp=%HH%%Min%%Sec%
 set fullstamp=%YYYY%-%MM%-%DD%_%HH%-%Min%-%Sec%
 echo datestamp: "%datestamp%"
@@ -34,7 +35,7 @@ REM PAUSE
 
 REM PAUSE
 
-MORE /E +1 "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_%today%.txt" > "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
+MORE /E +1 "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai_%datestamp_short%.txt" > "D:\快盘\ShuJuCaiJi\WangZhiHuiZong\bucai.txt"
 
 REM PAUSE
 
