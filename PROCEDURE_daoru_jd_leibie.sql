@@ -15,11 +15,14 @@ INSERT INTO `leibie` ( `jd_leibie_id` , `jd_leibie`, `jd_leibie_id1`, `jd_leibie
 	FROM
 			`daoru_jd`
 	WHERE
-			`daoru_jd`.`jd_leibie_id` IS NOT NULL
+			`daoru_jd`.`jd_leibie_id` IS NOT NULL AND
+			`daoru_jd`.`jd_leibie` IS NOT NULL AND
+			`daoru_jd`.`jd_leibie_id1` IS NOT NULL AND
+			`daoru_jd`.`jd_leibie_id0` IS NOT NULL
 	)
 	ON DUPLICATE KEY UPDATE 
 			`jd_leibie`= `daoru_jd`.`jd_leibie`;
 
-END$$
+END $$
 
 DELIMITER ;
