@@ -4,12 +4,16 @@
 -- --------------------------------------------------------------------------------
 DELIMITER $$
 
-/* CALL daoru_leibie_sp('[标签:类别ID]', '[标签:类别名字]', '[标签:祖父类ID]', '[标签:父类ID]', '[标签:类别网址]', [采集页网址], [系统时间转化:yyyy-MM-dd]) */
-
 CREATE DEFINER=`root`@`%` PROCEDURE `daoru_leibie_sp`(IN jd_leibie_id_hc VARCHAR(255), jd_leibie_hc VARCHAR(255), jd_leibie_id0_hc VARCHAR(255), jd_leibie_id1_hc VARCHAR(255), PageUrl_hc VARCHAR(255), jd_jintian_riqi_hc DATE)
 BEGIN
 
-/* 1. 采集的数据都先把数据类型设为 VARCHAR，再用CAST转化为相应的类型。2.#0 IN 参数（Parameter）名字和导入数据库的字段名应该不一样，在这里加上_hc(火车）
+/* 
+	CALL daoru_leibie_sp('[标签:类别ID]',  '[标签:类别名字]',  '[标签:祖父类ID]',  '[标签:父类ID]',  '[采集页网址]', '[系统时间转化:yyyy-MM-dd]') 
+*/
+
+/* 
+	1. 采集的数据都先把数据类型设为 VARCHAR，再用CAST转化为相应的类型。
+	2.#0 IN 参数（Parameter）名字和导入数据库的字段名应该不一样，在这里加上_hc(火车）
 */
 SET jd_leibie_id_hc = IF(jd_leibie_id_hc = '', NULL, CAST(jd_leibie_id_hc AS UNSIGNED));
 SET jd_leibie_id0_hc = IF(jd_leibie_id0_hc = '', NULL, CAST(jd_leibie_id0_hc AS UNSIGNED));
