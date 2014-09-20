@@ -1,9 +1,6 @@
 -- --------------------------------------------------------------------------------
 -- Routine DDL
 -- Note: comments before and after the routine body will not be stored by the server
--- 把汇总内容分开。示例：在字段里的内容是：内容1|内容|内容|内容|内容|。。。|内容10， 我们把由'|'分隔的10个子内容更新到十个字段中。
--- 用if( , , )函数是基于以下两个原因：1. REPLACE ( abcd, abcd|, '') = abcd，2. 在有些字段里，只有8个子内容。
--- `column` LIKE '%{$needle}%' 和 INSTR(`column`, '{$needle}') > 0 的功能相似。 	
 -- --------------------------------------------------------------------------------
 DELIMITER $$
 
@@ -24,7 +21,12 @@ INSERT INTO `jd_mjyxhz` ( `jd_id` , `jd_mjyxhz` )
 	ON DUPLICATE KEY UPDATE 
 			`jd_mjyxhz`= `daoru_jd`.`jd_mjyxhz`;
 
-/*把汇总内容分开*/			
+/*把汇总内容分开*/
+/*
+	示例：在字段里的内容是：内容1|内容|内容|内容|内容|。。。|内容10， 我们把由'|'分隔的10个子内容更新到十个字段中。
+	用if( , , )函数是基于以下两个原因：1. REPLACE ( abcd, abcd|, '') = abcd，2. 在有些字段里，只有8个子内容。
+	`column` LIKE '%{$needle}%' 和 INSTR(`column`, '{$needle}') > 0 的功能相似。
+*/			
         UPDATE `jd_mjyxhz` 
 SET 
 	`jd_mjyxhz_01` = SUBSTRING_INDEX( `jd_mjyxhz` , '|', 1 );
