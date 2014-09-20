@@ -1,0 +1,7 @@
+类别名字
+
+类别名字：<LI><a href='http://list.jd.com/list.html?cat=[参数],[参数],[参数]'>[参数]</a></LI> 参数4
+祖父类ID：参数1
+父类ID：参数2
+类别ID：参数3
+类别网址：http://list.jd.com/list.html?cat=[标签:祖父类ID],[标签:父类ID],[标签:类别ID]
