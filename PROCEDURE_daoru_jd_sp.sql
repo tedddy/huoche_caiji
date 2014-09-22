@@ -39,7 +39,7 @@ SET jd_mingcheng_hc = IF(jd_mingcheng_hc = ''  OR jd_mingcheng_hc LIKE '%db:%' O
 SET jd_shuxing_hc = IF(jd_shuxing_hc = ''  OR jd_shuxing_hc LIKE '%db:%' OR jd_shuxing_hc LIKE '%???%', NULL, jd_shuxing_hc);
 SET jd_leibie_id0_hc = IF(jd_leibie_id0_hc = '' OR jd_leibie_id0_hc LIKE '%db:%', NULL, CAST(jd_leibie_id0_hc AS UNSIGNED));
 SET jd_leibie_id1_hc = IF(jd_leibie_id1_hc = '' OR jd_leibie_id1_hc LIKE '%db:%', NULL, CAST(jd_leibie_id1_hc AS UNSIGNED));
-SET jd_tupian_hc = IF(jd_tupian_hc = '' OR jd_tupian_hc LIKE '%???%', NULL, jd_tupian_hc);
+SET jd_tupian_hc = IF(jd_tupian_hc = '' OR jd_tupian_hc LIKE '%???%' OR jd_tupian_hc LIKE '%db:%', NULL, jd_tupian_hc);
 SET jd_tupian_yidong_hc = IF(jd_tupian_yidong_hc = '' OR jd_tupian_yidong_hc LIKE '%???%' OR jd_tupian_yidong_hc LIKE '%db:%', NULL, jd_tupian_yidong_hc);
 SET jd_tupian_miaoshu_hc = IF(jd_tupian_miaoshu_hc = '' OR jd_tupian_miaoshu_hc LIKE '%db:%' OR jd_tupian_miaoshu_hc LIKE '%???%', NULL, jd_tupian_miaoshu_hc);
 SET jd_boxz_riqi_hc = IF(jd_boxz_riqi_hc = '' OR jd_boxz_riqi_hc LIKE '%db:%', NULL, CAST(jd_boxz_riqi_hc AS DATE));
