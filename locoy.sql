@@ -12,6 +12,21 @@ BEGIN
 END
 */
 
+/* 整理daoru_jd 没有采集的字段 */
+UPDATE daodu_jd
+SET jd_tupian = NULL 
+WHERE jd_tupian LIKE '%db:%';
+
+/* http://club.jd.com/review/$1-0-1-0.html */
+SELECT concat('http://club.jd.com/review/',jd_id,'-0-1-0.html') AS 'comments_url'
+FROM `daoru_jd`
+WHERE `jd_leibie_id` in (11303);
+
+/*http://p.3.cn/prices/get?skuid=J_$1 */
+SELECT concat('http://p.3.cn/prices/get?skuid=J_',jd_id) AS 'price_url'
+FROM `daoru_jd`
+WHERE `jd_leibie_id` in (11303);
+
 /* 加入内容是否导入成功程度的字段。f是flag的缩写 cgbz是成功标志的缩写。 */
 ALTER TABLE `daoru_jd` ADD `f_cgbz` TINYINT(1) DEFAULT NULL COMMENT '成功标志' AFTER `jd_id`;
 
