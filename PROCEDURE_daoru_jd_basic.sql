@@ -1,16 +1,15 @@
--- --------------------------------------------------------------------------------
--- Routine DDL
--- Note: comments before and after the routine body will not be stored by the server
--- --------------------------------------------------------------------------------
-DELIMITER $$
+USE `locoy`;
+DROP procedure IF EXISTS `daoru_jd_basic`;
 
+DELIMITER $$
+USE `locoy`$$
 CREATE DEFINER=`root`@`%` PROCEDURE `daoru_jd_basic`(IN jd_id_hc VARCHAR(255), jd_jiancheng_hc VARCHAR(255), jd_xinghao_hc VARCHAR(255), jd_yanse_hc VARCHAR(255), jd_leibie_id_hc VARCHAR(255), jd_pinpai_id_hc VARCHAR(255), jd_mingcheng_hc VARCHAR(255), jd_shuxing_hc VARCHAR(25555), jd_leibie_id0_hc VARCHAR(255), jd_leibie_id1_hc VARCHAR(255), jd_tupian_hc VARCHAR(2555), jd_tupian_miaoshu_hc VARCHAR(2555), jd_jintian_riqi_hc DATE, jd_wangzhi_hc VARCHAR(255), jd_leibie_pinpai_hc VARCHAR(255), jd_zhongliang_hc VARCHAR(255), jd_leibie_hc VARCHAR(255), jd_pinpai_hc VARCHAR(255), jd_sj_riqi_hc VARCHAR(255), jd_dianpu_hc VARCHAR(255), jd_dianpu_id_hc VARCHAR(255), jd_caiji_id_hc VARCHAR(255), jd_shuxing_sj_hc VARCHAR(2555), jd_tupian_miaoshu2_hc VARCHAR(2558), jd_tlpp_hc VARCHAR(2555))
 BEGIN
 
 /* 
 CALL daoru_jd_basic('[标签:京东货号]', '[标签:商品简称]', '[标签:型号]', '[标签:颜色]', '[标签:类别ID]', '[标签:品牌ID]', '[标签:商品名称]', '[标签:商品属性]', '[标签:祖父类ID]', '[标签:父类ID]', '[标签:商品图片]', '[标签:图片-描述]', '[系统时间转化:yyyy-MM-dd]','[采集页网址]', '[标签:同类别品牌商品链接]', '[标签:商品毛重]', '[标签:类别名字]', '[标签:品牌名字]', '[标签:上架日期]', '[标签:店铺名字]', '[标签:店铺id]', '[标签:Id]', '[标签:商品属性-数据]', '[标签:图片-描述2]', '[标签:同类品牌]') 
 */
-SET jd_id_hc = IF(jd_id_hc = '', NULL, jd_id_hc);
+SET jd_id_hc = IF(jd_id_hc = '', NULL, jd_id_hc); 
 SET jd_jiancheng_hc = IF(jd_jiancheng_hc = '' OR jd_jiancheng_hc LIKE '%db:%', NULL, jd_jiancheng_hc);
 SET jd_xinghao_hc = IF(jd_xinghao_hc = '' OR jd_xinghao_hc LIKE '%db:%', NULL, jd_xinghao_hc);
 SET jd_yanse_hc = IF(jd_yanse_hc = '' OR jd_yanse_hc LIKE '%db:%', NULL, jd_yanse_hc);
@@ -61,4 +60,7 @@ ON DUPLICATE KEY UPDATE
 	`jd_shuxing_sj` = IF(jd_shuxing_sj_hc IS NULL, `jd_shuxing_sj`, jd_shuxing_sj_hc),
 	`jd_tupian_miaoshu2` = IF(jd_tupian_miaoshu2_hc IS NULL, `jd_tupian_miaoshu2`, jd_tupian_miaoshu2_hc),
 	`jd_tlpp` = IF(jd_tlpp_hc IS NULL, `jd_tlpp`, jd_tlpp_hc);
-END
+END$$
+
+DELIMITER ;
+
