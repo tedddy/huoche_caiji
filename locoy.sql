@@ -12,6 +12,16 @@ BEGIN
 END
 */
 
+ALTER TABLE `locoy`.`daoru_jd_basic` 
+CHANGE COLUMN `jd_sx_yanse` `jd_yanse` VARCHAR(16) NULL DEFAULT NULL COMMENT '颜色' ;
+
+/* 增加表daoru_jd_basic */
+
+/* http://www.boxz.com/products/360buy-$1.shtml */
+SELECT concat('http://www.boxz.com/products/360buy-',jd_id,'.shtml') AS 'boxz_url'
+FROM `daoru_jd`
+WHERE `jd_leibie_id` in (11303);
+
 /* 整理daoru_jd 没有采集的字段 */
 UPDATE daodu_jd
 SET jd_tupian = NULL 
