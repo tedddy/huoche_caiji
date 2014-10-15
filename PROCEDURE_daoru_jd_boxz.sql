@@ -52,7 +52,13 @@ ON DUPLICATE KEY UPDATE
 	`jd_jintian_riqi` = IF(jd_jintian_riqi_hc IS NULL, `jd_jintian_riqi`, jd_jintian_riqi_hc);
 	
 INSERT INTO `daoru_jd_boxz_day` (`jd_id`,`boxz_id`,`boxz_xianjia`,`jd_pinglunshu`,`jd_pinglunshu_all`,`jd_cities`,`jd_boxz_riqi`,`jd_jintian_riqi`
-) VALUES (jd_id_hc, boxz_id_hc, boxz_xianjia_hc, jd_pinglunshu_hc, jd_pinglunshu_all_hc, jd_cities_hc, jd_boxz_riqi_hc, jd_jintian_riqi_hc);
+) VALUES (jd_id_hc, boxz_id_hc, boxz_xianjia_hc, jd_pinglunshu_hc, jd_pinglunshu_all_hc, jd_cities_hc, jd_boxz_riqi_hc, jd_jintian_riqi_hc)ON DUPLICATE KEY UPDATE 
+	`boxz_id` = IF(boxz_id_hc IS NULL, `boxz_id`, boxz_id_hc),
+	`boxz_xianjia` = IF(boxz_xianjia_hc IS NULL, `boxz_xianjia`, boxz_xianjia_hc),
+	`jd_pinglunshu` = IF(jd_pinglunshu_hc IS NULL, `jd_pinglunshu`, jd_pinglunshu_hc),
+	`jd_pinglunshu_all` = IF(jd_pinglunshu_all_hc IS NULL, `jd_pinglunshu_all`, jd_pinglunshu_all_hc), 
+	`jd_cities` = IF(jd_cities_hc IS NULL, `jd_cities_hc`, jd_cities_hc),
+	`jd_boxz_riqi` = IF(jd_boxz_riqi_hc IS NULL, `jd_boxz_riqi`, jd_boxz_riqi_hc);
 
 END$$
 

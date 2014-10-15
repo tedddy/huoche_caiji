@@ -3,7 +3,7 @@ DROP procedure IF EXISTS `daoru_jd_basic`;
 
 DELIMITER $$
 USE `locoy`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `daoru_jd_basic`(IN jd_id_hc VARCHAR(255), jd_jiancheng_hc VARCHAR(255), jd_xinghao_hc VARCHAR(255), jd_yanse_hc VARCHAR(255), jd_leibie_id_hc VARCHAR(255), jd_pinpai_id_hc VARCHAR(255), jd_mingcheng_hc VARCHAR(255), jd_shuxing_hc VARCHAR(25555), jd_leibie_id0_hc VARCHAR(255), jd_leibie_id1_hc VARCHAR(255), jd_tupian_hc VARCHAR(2555), jd_tupian_miaoshu_hc VARCHAR(2555), jd_jintian_riqi_hc DATE, jd_wangzhi_hc VARCHAR(255), jd_leibie_pinpai_hc VARCHAR(255), jd_zhongliang_hc VARCHAR(255), jd_leibie_hc VARCHAR(255), jd_pinpai_hc VARCHAR(255), jd_sj_riqi_hc VARCHAR(255), jd_dianpu_hc VARCHAR(255), jd_dianpu_id_hc VARCHAR(255), jd_caiji_id_hc VARCHAR(255), jd_shuxing_sj_hc VARCHAR(2555), jd_tupian_miaoshu2_hc VARCHAR(2558), jd_tlpp_hc VARCHAR(2555))
+CREATE DEFINER=`root`@`%` PROCEDURE `daoru_jd_basic`(IN jd_id_hc VARCHAR(255), jd_jiancheng_hc VARCHAR(255), jd_xinghao_hc VARCHAR(255), jd_yanse_hc VARCHAR(255), jd_leibie_id_hc VARCHAR(255), jd_pinpai_id_hc VARCHAR(255), jd_mingcheng_hc VARCHAR(255), jd_shuxing_hc VARCHAR(8192), jd_leibie_id0_hc VARCHAR(255), jd_leibie_id1_hc VARCHAR(255), jd_tupian_hc VARCHAR(2555), jd_tupian_miaoshu_hc VARCHAR(8192), jd_jintian_riqi_hc DATE, jd_wangzhi_hc VARCHAR(255), jd_leibie_pinpai_hc VARCHAR(255), jd_zhongliang_hc VARCHAR(255), jd_leibie_hc VARCHAR(255), jd_pinpai_hc VARCHAR(255), jd_sj_riqi_hc VARCHAR(255), jd_dianpu_hc VARCHAR(255), jd_dianpu_id_hc VARCHAR(255), jd_caiji_id_hc VARCHAR(255), jd_shuxing_sj_hc VARCHAR(8192), jd_tupian_miaoshu2_hc VARCHAR(8192), jd_tlpp_hc VARCHAR(8192))
 BEGIN
 
 /* 
