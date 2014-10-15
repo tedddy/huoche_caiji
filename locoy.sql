@@ -1,3 +1,8 @@
+/*对jd_leibie_id0=670,jd_leibie_id1=670 ,生成采集网址http://list.jd.com/list.html?cat=670%2C686%2C690&sort=sort_totalsales15_desc&page=(*)*/
+SELECT jd_data,`jd_leibie`,`jd_leibie_fys`, concat('http://list.jd.com/list.html?cat=',jd_leibie_id0,'%2C',jd_leibie_id1,'%2C',jd_leibie_id,'&sort=sort_totalsales15_desc&page=(*)') AS 'cjwz'
+FROM `leibie`
+WHERE jd_leibie_id0 = 670 and jd_leibie_id1 = 670;
+
 /* 下面的修改以locoy_140914.sql为基准 */  /*  */
 SELECT * FROM; /* 故意在头一句放一个错误语句，阻止执行整页的语句 */
 /* 模板 
